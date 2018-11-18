@@ -22,7 +22,8 @@ fetch(endpoint)
   .then(response => response.json())
   .then(data => cities.push(...data))
 
-console.log(cities)
+const searchInput = document.querySelector('.search')
+const suggestions = document.querySelector('.suggestions')
 
 
 </script>
