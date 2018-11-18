@@ -32,8 +32,20 @@ function findMatches(wordToMatch, cities){
 }
 
 function displayMatches(){
-  console.log(this.value)
+  const matchingPlaces = findMatches(this.value, cities)
+
+  const visibleResult = matchingPlaces.map(place => {
+      return `
+      <li>
+      <span class="name">${place.city}, ${this.state}</span>
+      <span class="population">${place.population}</span>
+      </li>
+      `
+  }).join('')
+
+  suggestions.innerHTML = visibleResult
 }
+
 const searchInput = document.querySelector('.search')
 const suggestions = document.querySelector('.suggestions')
 
